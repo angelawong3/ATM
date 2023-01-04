@@ -42,4 +42,29 @@ public class CardHolder
         return balance;
     }
 
+    public void setNumber(String newCardNumber)
+    {
+        cardNumber = newCardNumber;
+    }
+
+    public void setPin(int newPin)
+    {
+        pin = newPin;
+    }
+
+    public void setFirstName(String newFirstName)
+    {
+        firstName = newFirstName;
+    }
+
+    public void setLastName(String newLastName)
+    {
+        lastName = newLastName;
+    }
+
+    public void setBalance(double newBalance)
+    {
+        balance = newBalance;
+    }
+
 }
