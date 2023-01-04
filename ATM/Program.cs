@@ -84,7 +84,7 @@ public class CardHolder
         {
             Console.WriteLine("How much money would you like to deposit? ");
             double deposit = Double.Parse(Console.ReadLine());
-            currentUser.setBalance(deposit);
+            currentUser.setBalance(currentUser.getBalance() + deposit);
             Console.WriteLine("Thank you. Your new balance is : " + currentUser.getBalance());
         }
 
@@ -93,7 +93,7 @@ public class CardHolder
             Console.WriteLine("How much money would you like to withdraw? ");
             double withdrawal = Double.Parse(Console.ReadLine());
 
-            if (currentUser.getBalance() > withdrawal)
+            if (currentUser.getBalance() < withdrawal)
             {
                 Console.WriteLine("Insufficient balance");
             }
@@ -161,7 +161,24 @@ public class CardHolder
             }
         }
 
-
+        Console.WriteLine("Welcome, " + currentUser.getFirstName() + "! ");
+        int option = 0;
+        do
+        {
+            printOptions();
+            try
+            {
+                option = int.Parse(Console.ReadLine());
+            }
+            catch { }
+            if (option == 1) { deposit(currentUser); }
+            else if (option == 2) { withdraw(currentUser); }
+            else if (option == 3) { balance(currentUser); }
+            else if (option == 4) { break; }
+            else { option = 0; }
+        }
+        while (option != 4);
+        Console.WriteLine("Thank you! Have a nice day! :)");
 
     }
 
